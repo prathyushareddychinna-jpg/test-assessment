@@ -1,0 +1,168 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QA Test Execution Dashboard</title>
+<style>
+:root{--ink:#24313d;--muted:#68747e;--paper:#f4f2ed;--card:#fff;--line:#dedbd3;--navy:#27435f;--teal:#397a70;--amber:#c9942f;--red:#b65345;--blue:#5a7791;--shadow:0 8px 28px rgba(36,49,61,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.5 "Segoe UI",Arial,sans-serif}.wrap{max-width:1200px;margin:auto;padding:34px 28px 55px}.top{display:flex;justify-content:space-between;gap:25px;align-items:flex-end;border-bottom:1px solid var(--line);padding-bottom:22px}.eyebrow{font-size:11px;letter-spacing:.14em;color:var(--amber);font-weight:700}.title{font-size:30px;margin:5px 0 2px;color:var(--navy);font-weight:700}.sub{color:var(--muted)}.run{font-weight:700;color:var(--red)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow)}.label{font-size:10px;letter-spacing:.1em;color:var(--muted);font-weight:700}.value{font-size:30px;font-weight:700;margin-top:5px}.success{color:var(--teal)}.danger{color:var(--red)}.muted{color:#8c9399}.neutral{color:var(--navy)}
+.summary{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:20px}.panel h2{font-size:15px;margin:0 0 14px;color:var(--navy)}.rate{font-size:36px;font-weight:700;color:var(--navy);margin:8px 0}.bar{height:12px;border-radius:20px;background:#e9e6df;overflow:hidden;display:flex}.bar span{height:100%;display:block}.pbar{background:var(--teal);width:60%}.fbar{background:var(--red);width:40%}.sbar{background:#b9bec2;width:0%}.meta{color:var(--muted);font-size:12px}.legend{display:flex;gap:18px;margin-top:12px}.legend span{font-size:12px;color:var(--muted)}
+.selection{margin-top:16px}.selection p{margin:5px 0 0;color:var(--muted)}.test-table{margin-top:16px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line)}th{font-size:10px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}td:nth-child(2){min-width:390px}.pill{display:inline-block;padding:4px 9px;border-radius:20px;font-size:11px;font-weight:700}.pill.pass{background:#e6f1ee;color:var(--teal)}.pill.fail{background:#f6e6e2;color:var(--red)}.pill.skip{background:#ececea;color:#737b82}.pill.flaky{background:#f7efda;color:#9b7421}
+.section-title{margin:30px 0 12px;color:var(--navy);font-size:20px}.test-card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:22px;margin:14px 0}.test-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.test-id{font-size:11px;letter-spacing:.12em;color:var(--amber);font-weight:700}.test-head h3{margin:5px 0 0;color:var(--navy);font-size:18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}.grid>div{border-top:1px solid var(--line);padding-top:12px}.mini-label{font-size:9px;letter-spacing:.12em;color:var(--muted);font-weight:700}.grid p{margin:5px 0 0}.result-block{margin-top:14px;border:1px solid var(--line);border-radius:9px;padding:13px 15px;background:#faf9f6}.result-block.failure{border-left:4px solid var(--red);background:#fbf7f5}.success-block{border-left:4px solid var(--teal);background:#f5faf8}.result-text{margin-top:5px}.test-meta{margin-top:14px;font-size:11px;color:var(--muted)}details{margin-top:10px}summary{cursor:pointer;color:var(--blue);font-weight:600}pre{white-space:pre-wrap;font:11px/1.5 Consolas,monospace;color:#6e4038;background:#fff;padding:10px;border-radius:6px;border:1px solid #ead4cd;overflow:auto}.footer{margin-top:28px;text-align:center;color:var(--muted);font-size:11px}
+@media(max-width:850px){.cards{grid-template-columns:repeat(2,1fr)}.summary,.grid{grid-template-columns:1fr}.top{display:block}.run{margin-top:10px}}
+</style></head><body><div class="wrap">
+<div class="top"><div><div class="eyebrow">FUNCTIONAL TEST EXECUTION</div><div class="title">QA Test Execution Dashboard</div><div class="sub">DemoBlaze · Playwright · Chromium</div></div><div class="run">RUN STATUS: FAILED</div></div>
+<div class="cards">
+<div class="card"><div class="label">TOTAL TESTS</div><div class="value neutral">5</div></div>
+<div class="card"><div class="label">PASSED</div><div class="value success">3</div></div>
+<div class="card"><div class="label">FAILED</div><div class="value danger">2</div></div>
+<div class="card"><div class="label">SKIPPED</div><div class="value muted">0</div></div>
+</div>
+<div class="summary">
+<div class="panel"><h2>Execution summary</h2><div class="rate">60% pass rate</div><div class="bar"><span class="pbar"></span><span class="fbar"></span><span class="sbar"></span></div><div class="legend"><span>Passed 3</span><span>Failed 2</span><span>Skipped 0</span><span>Flaky 0</span></div></div>
+<div class="panel"><h2>Run details</h2><div class="meta" style="line-height:2"><div><strong>Duration:</strong> 37.7s</div><div><strong>Browser:</strong> Chromium</div><div><strong>Tests:</strong> 5</div><div><strong>Generated:</strong> 26/09/2026, 15:04:33</div></div></div>
+</div>
+<div class="panel selection"><h2>Why these five tests?</h2><p>The suite deliberately covers a representative spread of functional risk: product discovery, authentication, cart state, the end-to-end purchase journey and a negative business-rule scenario.</p></div>
+<div class="panel test-table"><h2>Test results at a glance</h2><div class="tablewrap"><table><thead><tr><th>ID</th><th>Scenario</th><th>Status</th><th>Duration</th></tr></thead><tbody><tr>
+      <td><strong>TC-01</strong></td>
+      <td>TC-01 browse category and open product details</td>
+      <td><span class="pill pass">PASSED</span></td>
+      <td>4.3s</td>
+    </tr><tr>
+      <td><strong>TC-02</strong></td>
+      <td>TC-02 register a unique user and log in</td>
+      <td><span class="pill pass">PASSED</span></td>
+      <td>6.0s</td>
+    </tr><tr>
+      <td><strong>TC-03</strong></td>
+      <td>TC-03 add a product to cart and verify the cart total</td>
+      <td><span class="pill pass">PASSED</span></td>
+      <td>5.4s</td>
+    </tr><tr>
+      <td><strong>TC-04</strong></td>
+      <td>TC-04 complete a purchase and verify confirmation details</td>
+      <td><span class="pill fail">FAILED</span></td>
+      <td>11.7s</td>
+    </tr><tr>
+      <td><strong>TC-05</strong></td>
+      <td>TC-05 empty cart must not allow order completion</td>
+      <td><span class="pill fail">FAILED</span></td>
+      <td>10.3s</td>
+    </tr></tbody></table></div></div>
+<h2 class="section-title">Test-by-test assessment</h2>
+<article class="test-card">
+      <div class="test-head">
+        <div><span class="test-id">TC-01</span><h3>TC-01 browse category and open product details</h3></div>
+        <span class="pill pass">PASSED</span>
+      </div>
+      <div class="grid">
+        <div><div class="mini-label">OBJECTIVE</div><p>Validate the core catalogue navigation journey from category selection to product details.</p></div>
+        <div><div class="mini-label">WHY THIS TEST WAS SELECTED</div><p>A stable smoke scenario covering a common customer journey and an important entry point into shopping flows.</p></div>
+        <div><div class="mini-label">EXPECTED RESULT</div><p>The selected category displays products and the product details page exposes the Add to cart action.</p></div>
+        <div><div class="mini-label">TEST COVERAGE</div><p>Customer journey / smoke coverage</p></div>
+      </div>
+      
+      <div class="result-block success-block">
+        <div class="mini-label">END RESULT</div>
+        <div class="result-text">Observed behaviour matched the automated expectation.</div>
+      </div>
+      
+      <div class="test-meta">Chromium · 4.3s · Retries 0</div>
+    </article><article class="test-card">
+      <div class="test-head">
+        <div><span class="test-id">TC-02</span><h3>TC-02 register a unique user and log in</h3></div>
+        <span class="pill pass">PASSED</span>
+      </div>
+      <div class="grid">
+        <div><div class="mini-label">OBJECTIVE</div><p>Validate new-user registration followed by authentication with the same credentials.</p></div>
+        <div><div class="mini-label">WHY THIS TEST WAS SELECTED</div><p>Authentication is a core functional capability and is repeatable across regression runs.</p></div>
+        <div><div class="mini-label">EXPECTED RESULT</div><p>Registration succeeds and the authenticated username is displayed after login.</p></div>
+        <div><div class="mini-label">TEST COVERAGE</div><p>Authentication / core functionality</p></div>
+      </div>
+      
+      <div class="result-block success-block">
+        <div class="mini-label">END RESULT</div>
+        <div class="result-text">Observed behaviour matched the automated expectation.</div>
+      </div>
+      
+      <div class="test-meta">Chromium · 6.0s · Retries 0</div>
+    </article><article class="test-card">
+      <div class="test-head">
+        <div><span class="test-id">TC-03</span><h3>TC-03 add a product to cart and verify the cart total</h3></div>
+        <span class="pill pass">PASSED</span>
+      </div>
+      <div class="grid">
+        <div><div class="mini-label">OBJECTIVE</div><p>Validate product addition to the cart and verify that the resulting cart total is greater than zero.</p></div>
+        <div><div class="mini-label">WHY THIS TEST WAS SELECTED</div><p>Covers a core purchase step and validates resulting business state rather than only a click or navigation event.</p></div>
+        <div><div class="mini-label">EXPECTED RESULT</div><p>The selected product is present in the cart and the cart total is greater than zero.</p></div>
+        <div><div class="mini-label">TEST COVERAGE</div><p>Cart / transaction state</p></div>
+      </div>
+      
+      <div class="result-block success-block">
+        <div class="mini-label">END RESULT</div>
+        <div class="result-text">Observed behaviour matched the automated expectation.</div>
+      </div>
+      
+      <div class="test-meta">Chromium · 5.4s · Retries 0</div>
+    </article><article class="test-card">
+      <div class="test-head">
+        <div><span class="test-id">TC-04</span><h3>TC-04 complete a purchase and verify confirmation details</h3></div>
+        <span class="pill fail">FAILED</span>
+      </div>
+      <div class="grid">
+        <div><div class="mini-label">OBJECTIVE</div><p>Validate the end-to-end purchase journey and the confirmation details shown after checkout.</p></div>
+        <div><div class="mini-label">WHY THIS TEST WAS SELECTED</div><p>This is a high-value business journey that connects product selection, cart state, checkout and confirmation.</p></div>
+        <div><div class="mini-label">EXPECTED RESULT</div><p>A purchase confirmation is displayed and includes the submitted customer name and expected order amount.</p></div>
+        <div><div class="mini-label">TEST COVERAGE</div><p>End-to-end / highest-value journey</p></div>
+      </div>
+      
+      <div class="result-block failure">
+        <div class="mini-label">WHY IT FAILED / INVESTIGATION</div>
+        <div class="result-text">The current run failed while verifying the customer name. The evidence proves the expected text was not found; it does not by itself prove that the purchase transaction failed.</div>
+        <details><summary>Technical assertion evidence</summary><pre>Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator: getByText(&#39;Assessment Tester&#39;, { exact: true })
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+[2m  - Expect &quot;toBeVisible&quot; getByText(&#39;Assessment Tester&#39;, { exact: true }) with timeout 5000ms[22m
+[2m  - waiting for getByText(&#39;Assessment Tester&#39;, { exact: true })[22m
+</pre></details>
+      </div>
+      <div class="result-block"><div class="mini-label">NEXT ACTION</div><div class="result-text">Investigate confirmation data / locator / timing and reproduce before raising a defect.</div></div>
+      <div class="test-meta">Chromium · 11.7s · Retries 0</div>
+    </article><article class="test-card">
+      <div class="test-head">
+        <div><span class="test-id">TC-05</span><h3>TC-05 empty cart must not allow order completion</h3></div>
+        <span class="pill fail">FAILED</span>
+      </div>
+      <div class="grid">
+        <div><div class="mini-label">OBJECTIVE</div><p>Validate that an order cannot be successfully completed when the cart contains no products.</p></div>
+        <div><div class="mini-label">WHY THIS TEST WAS SELECTED</div><p>Negative-path coverage checks an important business rule that a happy-path suite would not exercise.</p></div>
+        <div><div class="mini-label">EXPECTED RESULT</div><p>No successful purchase confirmation is displayed when the cart is empty.</p></div>
+        <div><div class="mini-label">TEST COVERAGE</div><p>Negative / business-rule coverage</p></div>
+      </div>
+      
+      <div class="result-block failure">
+        <div class="mini-label">WHY IT FAILED / INVESTIGATION</div>
+        <div class="result-text">The current run displayed a successful purchase confirmation despite an empty cart. This should be reproduced manually before being recorded as a confirmed product defect.</div>
+        <details><summary>Technical assertion evidence</summary><pre>Error: [2mexpect([22m[31mlocator[39m[2m).not.[22mtoBeVisible[2m([22m[2m)[22m failed
+
+Locator:  getByText(&#39;Thank you for your purchase!&#39;, { exact: true })
+Expected: not visible
+Received: visible
+Timeout:  5000ms
+
+Call log:
+[2m  - Expect &quot;not toBeVisible&quot; getByText(&#39;Thank you for your purchase!&#39;, { exact: true }) with timeout 5000ms[22m
+[2m  - waiting for getByText(&#39;Thank you for your purchase!&#39;, { exact: true })[22m
+[2m    13 × locator resolved to &lt;h2&gt;Thank you for your purchase!&lt;/h2&gt;[22m
+[2m       - unexpected value &quot;visible&quot;[22m
+</pre></details>
+      </div>
+      <div class="result-block"><div class="mini-label">NEXT ACTION</div><div class="result-text">Reproduce manually and capture evidence before confirming as a product defect.</div></div>
+      <div class="test-meta">Chromium · 10.3s · Retries 0</div>
+    </article>
+<div class="footer">Generated from the automated test run · Detailed execution evidence remains available in the Playwright output directories.</div>
+</div></body></html>

@@ -1,0 +1,18 @@
+{
+  "name": "companies-house-senior-test-engineer-assessment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Senior Test Engineer technical assessment - DemoBlaze functional automation",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed --workers=1",
+    "test:debug": "playwright test --debug",
+    "test:report": "start reports\\index.html",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:bug": "playwright test --grep @bug"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "typescript": "5.9.2"
+  }
+}
